@@ -1,4 +1,13 @@
+require 'sidekiq/web'
+require 'sidekiq/cron/web'
+
 Rails.application.routes.draw do
+  def draw(routes_name)
+    instance_eval(File.read(Rails.root.join("config/routes/#{routes_name}.rb")))
+  end
+
+  draw :sidekiq
+
   get 'endangered/index'
   # La route data est une méthode get qui récupère la donnée.
   get 'endangered/data', to: 'endangered#data'
