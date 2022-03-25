@@ -1,3 +1,2 @@
-web: bundle exec puma -C config/puma.rb
-worker: bundle exec sidekiq -e production -C config/sidekiq.yml
-release: bundle exec rake db:migrate
+web: bin/rails server -p $PORT -e $RAILS_ENV
+sharkworker: bundle exec sidekiq -c 2

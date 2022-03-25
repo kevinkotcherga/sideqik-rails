@@ -76,5 +76,6 @@ group :production do
 end
 
 gem 'sidekiq'
+
 gem 'sass-rails'
 gem 'font-awesome-rails'
