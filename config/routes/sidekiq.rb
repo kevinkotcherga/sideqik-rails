@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require "sidekiq/web"
+require "sidekiq"
 
 def sha256_digest(value)
   ::Digest::SHA256.hexdigest(value)

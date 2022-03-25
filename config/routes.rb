@@ -1,5 +1,4 @@
-require 'sidekiq/web'
-require 'sidekiq/cron/web'
+require 'sidekiq'
 
 Rails.application.routes.draw do
   def draw(routes_name)
