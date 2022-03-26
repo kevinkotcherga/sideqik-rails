@@ -1,4 +1,5 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const data = [
@@ -11,6 +12,13 @@ const data = [
 ];
 
 const Chart = () => {
+
+  useEffect(() => {
+    axios.get('http://localhost:3000/endangered/download_csv').then((res) => setSharksData(res.data));
+  }, []);
+
+  const [sharksData, setSharksData] = useState([]);
+
   return (
     <div>
       <ResponsiveContainer width="100%" aspect={3}>
