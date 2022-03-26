@@ -4,11 +4,8 @@ class EndangeredController < ApplicationController
 
   # Si il y a plus de 0 instances, redirection vers la data route pour voir les information sur les requins.
   def index
-    if @endangered.length > 0
-      redirect_to endangered_data_path
-    else
-      render 'index'
-    end
+    endangered = Endangered.all
+    render json: endangered
   end
 
   def data
