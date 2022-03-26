@@ -11,7 +11,7 @@ function Sharks() {
   const [sharksData, setSharksData] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/endangered/index.json').then((res) => setSharksData(res.data));
+    axios.get('http://localhost:3000/endangered/download_csv').then((res) => setSharksData(res.data));
 
   }, []);
 
