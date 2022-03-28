@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import Shark from '../shark/Shark'
 import './home.scss'
 import Header from '../../components/header/Header'
 import Summary from '../../components/summary/Summary';
 import Country from '../../components/country/Country';
 import Chart from '../../components/chart/Chart';
+import Memory from '../memory/Memory';
 
 function Sharks() {
   const [sharksData, setSharksData] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/memory/download_csv').then((res) => console.log(res.data));
+    axios.get('http://localhost:3000/memory/download_csv').then((res) => setSharksData(res.data));
 
   }, []);
 
@@ -30,8 +30,8 @@ function Sharks() {
           <Chart />
         </div>
         <div className='home__sharks'>
-          {sharksData.map((shark) => (
-            <Shark key={shark.id} shark={shark}/>
+          {sharksData.map((memory) => (
+            <Memory key={memory.id} memory={memory}/>
           ))}
         </div>
     </div>

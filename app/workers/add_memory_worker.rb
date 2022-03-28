@@ -11,7 +11,7 @@ class AddMemoryWorker
     # Headers:true garantit que la première ligne du fichier est traitée comme une ligne d'en-têtes.
     CSV.foreach(csv_file, headers: true) do |memory|
     # Nous utilisons la foreach méthode de la bibliothèque CSV pour lire les valeurs dans le fichier.
-    Memory.create(date: memory[0], order_id: memory[1], customer_id: memory[1], country: memory[1], product_code: memory[1], product_description: memory[1], quantity: memory[1], unit_price: memory[1])
+    Memory.create(date: memory[0], order_id: memory[1], customer_id: memory[2], country: memory[3], product_code: memory[4], product_description: memory[5], quantity: memory[6], unit_price: memory[7])
   end
  end
 
