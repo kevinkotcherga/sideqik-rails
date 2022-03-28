@@ -95,6 +95,9 @@ GEM
       railties (>= 3.2, < 8.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    haml (5.2.2)
+      temple (>= 0.8.0)
+      tilt
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.0.3)
@@ -171,6 +174,10 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
+    ransack (2.6.0)
+      activerecord (>= 6.0.4)
+      activesupport (>= 6.0.4)
+      i18n
     redis (4.6.0)
     regexp_parser (2.2.1)
     reline (0.3.1)
@@ -206,6 +213,7 @@ GEM
     stimulus-rails (1.0.4)
       railties (>= 6.0.0)
     strscan (3.0.1)
+    temple (0.8.2)
     thor (1.2.1)
     tilt (2.0.10)
     timeout (0.2.0)
@@ -238,11 +246,13 @@ DEPENDENCIES
   capybara
   debug
   font-awesome-rails
+  haml
   importmap-rails
   jbuilder
   pg
   puma (~> 5.0)
   rails (~> 7.0.2, >= 7.0.2.3)
+  ransack
   redis (~> 4.0)
   sass-rails
   selenium-webdriver
