@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 # app/controllers/endangered_controller.rb
 class EndangeredController < ApplicationController
-
   def index
     render json: Endangered.all
   end
+
   def download_csv
     endangered = Endangered.all
     render json: endangered
@@ -14,7 +16,7 @@ class EndangeredController < ApplicationController
   end
 
   def sort_by_iucn
-    endangered_vu = Endangered.where(iucn:'vu')
+    endangered_vu = Endangered.where(iucn: 'vu')
     render json: endangered_vu
   end
 end

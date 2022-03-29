@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Le jbuilder affiche mes résultats json à partir de l'API de recherche à l'adresse localhost:3000/search.json.
 json.memories do
   json.array!(@memories) do |memory|
     json.date memory.date

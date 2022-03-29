@@ -79,5 +79,9 @@ gem 'sidekiq'
 
 gem 'sass-rails'
 gem 'font-awesome-rails'
+
+# gem html
 gem 'haml'
+
+# gem de recherche
 gem 'ransack'

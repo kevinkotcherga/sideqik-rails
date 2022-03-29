@@ -1,38 +1,36 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 import './summary.scss'
 
-const Summary = ( {type} ) => {
-  let data;
+const Summary = ( { country } ) => {
 
-  switch (type) {
-    case 'revenue':
-      data = {
-        title:'Revenue',
-        counter: 50
-      };
-      break;
-      case 'order':
-      data = {
-        title:'Average revenue per order',
-        counter: 50
-      };
-      break;
-      case 'customers':
-      data = {
-        title:'Number of unique customers',
-        counter: 50
-      };
-      break;
-      default:
-      break;
-  }
+  const [filteredProducts, setFilteredProducts] = useState([]);
+
+  useEffect(() => {
+    const getProducts = async () => {
+      try {
+        // Ici je récupère la méthode de recherche et je lui appelle 'filters'. Des que filters changera, la recherche changera de pays.
+        const response = await axios.get(`http://localhost:3000/search.json?q=${country}`);
+        // Je récupère la donnée trié avec setProducts
+        setFilteredProducts(response.data)
+      } catch (err) {}
+    };
+    getProducts()
+  }, [country]);
+
+  const array = filteredProducts.memories
+  const arr = array || [];
+  const result1 = arr?.length;
+
+  console.log(filteredProducts.memories);
+
   return (
     <div className='summary'>
       <div className="summary__top">
-        <span className='summary__title'>{data.title}</span>
+        <span className='summary__title'>Utilisateurs</span>
       </div>
       <div className="summary__bottom">
-        <span className='summary__counter'>{data.counter}€</span>
+        <span className='summary__counter'>{result1}</span>
       </div>
     </div>
   )

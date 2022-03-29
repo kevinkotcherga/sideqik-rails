@@ -13,12 +13,6 @@ const data = [
 
 const Chart = () => {
 
-  useEffect(() => {
-    axios.get('http://localhost:3000/endangered/download_csv').then((res) => setSharksData(res.data));
-  }, []);
-
-  const [sharksData, setSharksData] = useState([]);
-
   return (
     <div>
       <ResponsiveContainer width="100%" aspect={3}>
