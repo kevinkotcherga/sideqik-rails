@@ -52,12 +52,14 @@ const Chart = ({ country }) => {
 		return [
       // Je récupère mon tableau
 			...arr
-				.reduce((acc, cur) => {
-					const [y, m, d] = cur.date.split('-');
+      // Je lui applique un reduce, il va parcourir le tableau et pour chaque élément appeler la fonction
+      // avec les paramètres accumulator et current
+				.reduce((accumulator, current) => {
+					const [y, m, d] = current.date.split('-');
 					const month = months[m - 1];
-					return acc.set(
+					return accumulator.set(
 						month,
-						(acc.get(month) ?? 0) + cur.unit_price * cur.quantity,
+						(accumulator.get(month) ?? 0) + current.unit_price * current.quantity,
 					);
 				}, new Map())
 				.entries(),
