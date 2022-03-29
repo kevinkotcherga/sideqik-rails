@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './country.scss';
 import styled from "styled-components";
-import Products from '../products/Products';
-import Summary from '../summary/Summary';
+import Customers from '../customers/Customers';
+import Chart from '../chart/Chart';
+import Revenue from '../revenue/Revenue';
+import AverageRevenue from '../average-revenue/AverageRevenue';
 
 const Select = styled.select`
   padding: 10px;
@@ -42,8 +44,15 @@ const Country = () => {
               <Option>EIRE</Option>
               <Option>Norway</Option>
             </Select>
-            <Summary country={country} />
       </div>
+      <div className='country__summary'>
+              <Revenue country={country} />
+              <AverageRevenue country={country} />
+              <Customers country={country} />
+            </div>
+            <div className="home__chart">
+              <Chart />
+            </div>
     </div>
   )
 }

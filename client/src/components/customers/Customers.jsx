@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import './summary.scss'
+import './customers.scss'
 
 const Summary = ( { country } ) => {
 
@@ -18,19 +18,21 @@ const Summary = ( { country } ) => {
     getProducts()
   }, [country]);
 
-  const array = filteredProducts.memories
-  const arr = array || [];
-  const result1 = arr?.length;
+  function countUnique(iterable) {
+  return new Set(iterable).size;
+}
 
-  console.log(filteredProducts.memories);
+  const arrayDos = filteredProducts.memories
+  const customers = arrayDos.map((customer) => customer.customer_id)
+  const NumberOfCustomers = countUnique(customers)
 
   return (
-    <div className='summary'>
-      <div className="summary__top">
-        <span className='summary__title'>Utilisateurs</span>
+    <div className='customers'>
+      <div className="customers__top">
+        <span className='customers__title'>Customers</span>
       </div>
-      <div className="summary__bottom">
-        <span className='summary__counter'>{result1}</span>
+      <div className="customers__bottom">
+        <span className='customers__counter'>{NumberOfCustomers}</span>
       </div>
     </div>
   )

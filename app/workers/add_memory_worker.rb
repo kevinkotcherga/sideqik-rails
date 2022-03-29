@@ -12,7 +12,6 @@ class AddMemoryWorker
     CSV.foreach(csv_file, headers: true) do |memory|
     # Nous utilisons la foreach méthode de la bibliothèque CSV pour lire les valeurs dans le fichier.
     Memory.create(date: memory[0], order_id: memory[1], customer_id: memory[2], country: memory[3], product_code: memory[4], product_description: memory[5], quantity: memory[6], unit_price: memory[7])
+    end
   end
- end
-
 end

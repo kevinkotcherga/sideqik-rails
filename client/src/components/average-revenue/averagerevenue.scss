@@ -1,4 +1,4 @@
-.summary {
+.averagerevenue {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,12 +11,12 @@
   height: 120px;
   background-color: #fff;
 
-  .summary__top, .summary__bottom {
-    .summary__title {
+  .averagerevenue__top, .averagerevenue__bottom {
+    .averagerevenue__title {
       font-weight: bold;
       font-size: 1.5rem;
     }
-    .summary__counter {
+    .averagerevenue__counter {
       font-size: 2rem;
       font-weight: 300;
     }
