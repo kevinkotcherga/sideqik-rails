@@ -33,8 +33,8 @@ const Country = () => {
       <div className="country__container">
         <span className='country__label'>Country :</span>
         <Select name="country" onChange={handleFilters}>
-              <Option >
-
+              <Option defaultValue >
+                All
               </Option>
               <Option>France</Option>
               <Option>United Kingdown</Option>
@@ -51,7 +51,7 @@ const Country = () => {
               <Customers country={country} />
             </div>
             <div className="home__chart">
-              <Chart />
+              <Chart country={country} />
             </div>
     </div>
   )

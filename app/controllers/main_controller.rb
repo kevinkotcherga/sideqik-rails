@@ -8,7 +8,8 @@ class MainController < ApplicationController
 
   # J'utilise la méthode "ransack" de ma gem.
   def search
-    @memories = Memory.ransack(country_cont: params[:q]).result(distinct: true)
+    @memories = Memory.ransack(country_or_product_description_cont: params[:q])
+                      .result(distinct: true)
   end
 
   private

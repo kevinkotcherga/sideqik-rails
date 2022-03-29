@@ -10,7 +10,7 @@ const Summary = ( { country } ) => {
     const getProducts = async () => {
       try {
         // Ici je récupère la méthode de recherche et je lui appelle 'filters'. Des que filters changera, la recherche changera de pays.
-        const response = await axios.get(`http://localhost:3000/search.json?q=${country}`);
+        const response = await axios.get(country === 'All' ? 'http://localhost:3000/search.json' : `http://localhost:3000/search.json?q=${country}`);
         // Je récupère la donnée trié avec setProducts
         setFilteredProducts(response.data)
       } catch (err) {}
@@ -21,7 +21,7 @@ const Summary = ( { country } ) => {
   // Set ne compte qu'une copie par valeur et me premet de connaitre le nombre de clients unique.
   function countUnique(iterable) {
   return new Set(iterable).size;
-}
+  }
   // Je stocke mes données dans 'array'.
   const array = filteredProducts.memories
   // Si array ne contient rien alors il est vide et ne fait pas crasher l'appplication.
