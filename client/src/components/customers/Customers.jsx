@@ -18,12 +18,17 @@ const Summary = ( { country } ) => {
     getProducts()
   }, [country]);
 
+  // Set ne compte qu'une copie par valeur et me premet de connaitre le nombre de clients unique.
   function countUnique(iterable) {
   return new Set(iterable).size;
 }
-
-  const arrayDos = filteredProducts.memories
-  const customers = arrayDos.map((customer) => customer.customer_id)
+  // Je stocke mes données dans 'array'.
+  const array = filteredProducts.memories
+  // Si array ne contient rien alors il est vide et ne fait pas crasher l'appplication.
+  const arr = array || [];
+  // Mapping des données pour obtenir les 'customer_id'.
+  const customers = arr.map((customer) => customer.customer_id)
+  // On compte ensuite le nombre d'utilisateurs unique avec la fonction countUnique.
   const NumberOfCustomers = countUnique(customers)
 
   return (
