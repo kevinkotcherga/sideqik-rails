@@ -33,8 +33,8 @@ const Country = () => {
       <div className="country__container">
         <span className='country__label'>Country :</span>
         <Select name="country" onChange={handleFilters}>
-              <Option disabled >
-                Country
+              <Option >
+
               </Option>
               <Option>France</Option>
               <Option>United Kingdown</Option>
