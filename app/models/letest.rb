@@ -1,0 +1,2 @@
+class Letest < ApplicationRecord
+end

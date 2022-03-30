@@ -22,18 +22,22 @@ const Revenue = ({ country }) => {
   const array = filteredProducts.memories
   // Si array ne contient rien alors il est vide et ne fait pas crasher l'appplication.
   let arr = array || [];
-  // Je calcule le total avec la méthode 'reduce'. J'initialise total à 0 et je lui additione chaque prix par sa quantitée.
-  const total = arr.reduce((total, {quantity, unit_price}) => {
-    total += quantity * unit_price
-    return total
-  }, 0
-)
+  // Je calcule le total avec la méthode 'getTotal'. J'initialise total à 0 et je lui additione chaque prix par sa quantitée.
+  function getTotal(arr) {
+      let total = 0;
+      arr.map((item) => {
+        let value = item.quantity * item.unit_price;
+        total += value;
+      })
+      return total;
+    }
+
   // Cette fonction me permet de séparer les nombres par des virgules.
-  function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  function numberWithCommas(number) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   }
 
-  const totalWithCommas = numberWithCommas(total.toFixed(2))
+  const totalWithCommas = numberWithCommas(getTotal(arr).toFixed(2))
 
   return (
     <div>

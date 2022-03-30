@@ -3,21 +3,25 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  text-align: center;
   padding: 20px;
   -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
   box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
   border-radius: 10px;
-  height: 120px;
-  background-color: #fff;
+  height: 15vh;
+  background-color: #F8FAFB;
+  width: 25vw;
 
   .averagerevenue__top, .averagerevenue__bottom {
     .averagerevenue__title {
-      font-weight: bold;
-      font-size: 1.5rem;
+      font-size: 3.5vh;
+      font-weight: 500;
+      color: #262A32;
     }
     .averagerevenue__counter {
-      font-size: 2rem;
-      font-weight: 300;
+      font-size: 4vh;
+      font-weight: 600;
+      color: #323232;
     }
   }
 }
