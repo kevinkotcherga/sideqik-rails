@@ -85,5 +85,3 @@ gem 'haml'
 
 # gem de recherche
 gem 'ransack'
-
-gem 'activerecord-import'

@@ -11,5 +11,6 @@ class MemoryController < ApplicationController
     # AddMemoryWorker est appellé depuis workers/add_memory_worker
     # perfom_async permet de transmetre les données à Redis.
     AddMemoryWorker.perform_async(csv_file)
+    render json: Memory.all
   end
 end

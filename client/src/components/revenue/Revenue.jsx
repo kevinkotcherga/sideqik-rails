@@ -6,6 +6,12 @@ const Revenue = ({ country }) => {
 
   const [filteredProducts, setFilteredProducts] = useState([]);
 
+
+
+
+        // Ici je récupère la méthode de recherche et je lui appelle 'filters'. Des que filters changera, la recherche changera de pays.
+        
+
   useEffect(() => {
     const getProducts = async () => {
       try {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './home.scss'
 import Header from '../../components/header/Header'
 import styled from "styled-components";
